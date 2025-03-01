@@ -1,7 +1,7 @@
 #include <iostream>
 #include "dynamic_array.h"
 
-// Функция для вывода динамического массива
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 void print_dynamic_array(int* arr, int logical_size, int actual_size) {
     for (int i = 0; i < actual_size; ++i) 
     {
@@ -17,33 +17,33 @@ void print_dynamic_array(int* arr, int logical_size, int actual_size) {
     std::cout << std::endl;
 }
 
-// Функция для добавления элемента в динамический массив
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ
 void append_to_dynamic_array(int*& arr, int& logical_size, int& actual_size, int new_element) 
 {
     if (logical_size < actual_size)
     {
-        // Если есть место в массиве, добавляем элемент
+        // Р•СЃР»Рё РµСЃС‚СЊ РјРµСЃС‚Рѕ РІ РјР°СЃСЃРёРІРµ, РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚
         arr[logical_size] = new_element;
         logical_size++;
     }
     else
     {
-        // Если массив заполнен, создаем новый массив в два раза больше
+        // Р•СЃР»Рё РјР°СЃСЃРёРІ Р·Р°РїРѕР»РЅРµРЅ, СЃРѕР·РґР°РµРј РЅРѕРІС‹Р№ РјР°СЃСЃРёРІ РІ РґРІР° СЂР°Р·Р° Р±РѕР»СЊС€Рµ
         int new_actual_size = actual_size * 2;
         int* new_arr = new int[new_actual_size];
 
-        // Копируем элементы из старого массива в новый
+        // РљРѕРїРёСЂСѓРµРј СЌР»РµРјРµРЅС‚С‹ РёР· СЃС‚Р°СЂРѕРіРѕ РјР°СЃСЃРёРІР° РІ РЅРѕРІС‹Р№
         for (int i = 0; i < logical_size; ++i) 
         {
             new_arr[i] = arr[i];
         }
 
-        // Добавляем новый элемент
+        // Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚
         new_arr[logical_size] = new_element;
         logical_size++;
         actual_size = new_actual_size;
 
-        // Удаляем старый массив и переключаем указатель на новый
+        // РЈРґР°Р»СЏРµРј СЃС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ Рё РїРµСЂРµРєР»СЋС‡Р°РµРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РЅРѕРІС‹Р№
         delete[] arr;
         arr = new_arr;
     }
