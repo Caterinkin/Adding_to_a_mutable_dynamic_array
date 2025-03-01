@@ -1,10 +1,10 @@
 #ifndef DYNAMIC_ARRAY_H
 #define DYNAMIC_ARRAY_H
 
-// Функция для вывода динамического массива
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 void print_dynamic_array(int* arr, int logical_size, int actual_size);
 
-// Функция для добавления элемента в динамический массив
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р° РІ РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ
 void append_to_dynamic_array(int*& arr, int& logical_size, int& actual_size, int new_element);
 
 #endif // DYNAMIC_ARRAY_H
